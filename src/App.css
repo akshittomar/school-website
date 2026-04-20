@@ -1,0 +1,657 @@
+/* ============================================
+   Tender Burds Kindergarten School - Modern Design
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --color-red: #E84C3D;
+  --color-dark-blue: #003B7A;
+  --color-yellow: #FFB800;
+  --color-light-yellow: #FFE5CC;
+  --color-green: #4CAF50;
+  --color-orange: #FF6B35;
+  --color-light-blue: #E0F2F7;
+  --color-text-dark: #333;
+  --color-text-light: #666;
+  --color-bg-light: #F8F9FA;
+}
+
+* {
+  scroll-behavior: smooth;
+  font-family: 'Fredoka', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+/* ============================================
+   NAVBAR STYLES - Modern and Kid-Friendly
+   ============================================ */
+
+.navbar {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5F8FF 100%) !important;
+  box-shadow: 0 4px 15px rgba(0, 59, 122, 0.1);
+  z-index: 1000;
+  padding: 0.8rem 0;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  gap: 0.8rem;
+  white-space: nowrap;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.navbar-brand span {
+  background: linear-gradient(135deg, var(--color-red) 0%, var(--color-dark-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.1em;
+}
+
+/* School Logo */
+.school-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-red);
+  box-shadow: 0 2px 8px rgba(232, 76, 61, 0.3);
+  flex-shrink: 0;
+  min-width: 40px;
+  min-height: 40px;
+  transition: all 0.3s ease;
+}
+
+.school-logo:hover {
+  transform: rotate(10deg) scale(1.1);
+  box-shadow: 0 4px 15px rgba(232, 76, 61, 0.4);
+}
+
+.nav-link {
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 0 5px;
+  color: var(--color-text-dark) !important;
+  font-size: 0.95em;
+}
+
+.nav-link:hover {
+  color: var(--color-red) !important;
+  transform: translateY(-2px);
+}
+
+.nav-link i {
+  margin-right: 0.4rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-red) 0%, var(--color-orange) 100%) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(232, 76, 61, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(232, 76, 61, 0.4);
+}
+
+/* ============================================
+   HOME PAGE STYLES
+   ============================================ */
+
+#home {
+  background: linear-gradient(135deg, #F5F8FF 0%, #FFF5E6 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+#home::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 184, 0, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(30px) translateX(10px); }
+}
+
+.badge-custom {
+  background: linear-gradient(135deg, var(--color-red) 0%, var(--color-orange) 100%);
+  color: white;
+  padding: 0.8em 1.5em;
+  border-radius: 50px;
+  font-weight: 700;
+  animation: pulse-badge 2s infinite;
+  display: inline-block;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.08) rotate(2deg); }
+}
+
+.card {
+  border-radius: 20px;
+  border: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 59, 122, 0.15) !important;
+}
+
+.carousel {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--color-red) 0%, var(--color-orange) 100%);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+  opacity: 0.9;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ============================================
+   ACTIVITIES PAGE STYLES
+   ============================================ */
+
+#activities {
+  background: linear-gradient(135deg, #FFF5E6 0%, #F5FFEB 100%);
+  position: relative;
+}
+
+.carousel-caption h5 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  font-size: 1.8em;
+}
+
+/* Floating Go to Top Button - Dark Yellow Theme */
+.floating-top-btn-dark {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, var(--color-yellow) 0%, #FF9800 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.4em;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 6px 20px rgba(255, 184, 0, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.floating-top-btn-dark:hover {
+  transform: scale(1.15) translateY(-8px);
+  box-shadow: 0 10px 30px rgba(255, 184, 0, 0.6);
+}
+
+.floating-top-btn-dark:active {
+  transform: scale(0.95);
+}
+
+/* ============================================
+   ABOUT PAGE STYLES
+   ============================================ */
+
+#about {
+  background: linear-gradient(135deg, #F5FFEB 0%, #F5F8FF 100%);
+  position: relative;
+}
+
+.progress {
+  border-radius: 15px;
+  background-color: #E9E9E9;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: 1.8rem;
+  overflow: hidden;
+}
+
+.progress-bar {
+  border-radius: 15px;
+  font-weight: 800;
+  transition: width 0.6s ease;
+}
+
+/* ============================================
+   TYPOGRAPHY & COLORS
+   ============================================ */
+
+h1 {
+  font-size: 3em;
+  color: var(--color-text-dark);
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 2.3em;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 1.8em;
+  color: var(--color-dark-blue);
+  font-weight: 700;
+}
+
+.lead {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: var(--color-text-light);
+  line-height: 1.8;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 0.85em;
+  }
+
+  .navbar-brand span {
+    font-size: 0.9em;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  .school-logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .floating-top-btn-dark {
+    width: 55px;
+    height: 55px;
+    font-size: 1.1em;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2em;
+  }
+
+  h1 {
+    font-size: 2em;
+    letter-spacing: 0.5px;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
+
+  .badge-custom {
+    font-size: 0.85em;
+    padding: 0.6em 1em;
+  }
+
+  #home::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .lead {
+    font-size: 1em;
+  }
+
+  .card {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .navbar {
+    padding: 0.6rem 0;
+  }
+
+  .navbar-brand {
+    font-size: 0.75em;
+    gap: 0.4rem;
+  }
+
+  .navbar-brand span {
+    font-size: 0.8em;
+    line-height: 1.1;
+    word-break: break-word;
+    max-width: 150px;
+  }
+
+  .school-logo {
+    width: 32px;
+    height: 32px;
+    border-width: 2px;
+  }
+
+  .nav-link {
+    font-size: 0.75em;
+    margin: 0 1px;
+    padding: 0.3rem 0.6rem !important;
+  }
+
+  .btn-lg {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.8em;
+  }
+
+  h1 {
+    font-size: 1.4em;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  h3 {
+    font-size: 1.05em;
+  }
+
+  h5 {
+    font-size: 0.95em;
+  }
+
+  .badge-custom {
+    font-size: 0.75em;
+    padding: 0.5em 0.8em;
+  }
+
+  .lead {
+    font-size: 0.9em;
+    font-weight: 400;
+  }
+
+  .card-body {
+    padding: 1rem !important;
+  }
+
+  .progress {
+    height: 1.2rem;
+  }
+
+  .carousel {
+    border-radius: 15px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    font-size: 1em;
+  }
+
+  .floating-top-btn-dark {
+    width: 50px;
+    height: 50px;
+    font-size: 1em;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .row {
+    gap: 0.5rem;
+  }
+
+  .col-md-3 {
+    margin-bottom: 1rem;
+  }
+
+  #home::before {
+    width: 200px;
+    height: 200px;
+    top: 0;
+    right: 0;
+  }
+
+  .text-center {
+    padding: 0 0.5rem;
+  }
+}
+
+/* ============================================
+   ANIMATIONS & EFFECTS
+   ============================================ */
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar {
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
